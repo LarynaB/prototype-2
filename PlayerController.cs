@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public float xRange = 10;
+    public float speed = 10.0f;
+    public float xRange = 10.0f;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {//create vector boundary using if statement for position y and x
-        if (transform.position.x < xRange)
+        if (transform.position.x < -xRange)
             {
                 transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
             }
